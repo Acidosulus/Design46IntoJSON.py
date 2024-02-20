@@ -3,13 +3,25 @@ from openpyxl import load_workbook
 
 print(sys.argv[1])
 
+file_source = sys.argv[1]
+if file_source[-3:].upper() == 'ODS':
+
+	print('!!!!!!!!!!!!!!!!!!!!!!!!!')
+	import  jpype     
+	import  asposecells     
+	jpype.startJVM() 
+	from asposecells.api import Workbook
+	workbook = Workbook(file_source)
+	workbook.save(file_source+'.xlsx')
+	file_source += '.xlsx'
+	jpype.shutdownJVM()
 
 print('===============================================================')
 pattern_content = open(file='pattern.json', mode='r', encoding='utf-8').read()
 #print(pattern_content)
 print('===============================================================')
 
-workbook = load_workbook(sys.argv[1], data_only =True)
+workbook = load_workbook(file_source, data_only =True)
 
 sheet = workbook['Титульный']
 data = []
@@ -131,7 +143,7 @@ for row in range(18,41+1):
 #print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_IV }}','\n'.join(data))
 
-open(file=sys.argv[1]+'.json', mode='a', encoding='utf-8').write(pattern_content)
+open(file=file_source+'.json', mode='a', encoding='utf-8').write(pattern_content)
 
 #input("Press Enter to continue...")
 
