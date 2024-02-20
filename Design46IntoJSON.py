@@ -53,10 +53,10 @@ for row in range(18,94+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_I__Б }}','\n'.join(data))
 
-print('=================================================================')
+#print('=================================================================')
 
 sheet = workbook['Раздел_I__В']
 data = []
@@ -68,10 +68,10 @@ for row in range(18,61+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_I__В }}','\n'.join(data))
 
-print('=================================================================')
+#print('=================================================================')
 
 sheet = workbook['Раздел_II__А_(ТИС)']
 data = []
@@ -83,10 +83,10 @@ for row in range(18,39+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_II__А_(ТИС) }}','\n'.join(data))
 
-print('=================================================================')
+#print('=================================================================')
 
 sheet = workbook['Раздел_II__Б_(ТИС)']
 data = []
@@ -98,10 +98,10 @@ for row in range(18,39+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_II__Б_(ТИС) }}','\n'.join(data))
 
-print('=================================================================')
+#print('=================================================================')
 
 sheet = workbook['Раздел_III']
 data = []
@@ -113,10 +113,10 @@ for row in range(18,45+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_III }}','\n'.join(data))
 
-print('=================================================================')
+#print('=================================================================')
 
 sheet = workbook['Раздел_IV']
 data = []
@@ -128,7 +128,7 @@ for row in range(18,41+1):
 			st += readed_value
 	if len(st)>10:
 		data.append(st)
-print('\n'.join(data))
+#print('\n'.join(data))
 pattern_content = pattern_content.replace('{{ Раздел_IV }}','\n'.join(data))
 
 open(file=sys.argv[1]+'.json', mode='a', encoding='utf-8').write(pattern_content)
