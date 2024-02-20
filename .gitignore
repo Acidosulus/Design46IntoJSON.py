@@ -2,8 +2,11 @@
 .vscode
 __pycache__
 env
+dist
+build
 logs
 settings.ini
 *.ods
 *.xls*
 *.json
+*.spec
