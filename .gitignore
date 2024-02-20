@@ -4,3 +4,6 @@ __pycache__
 env
 logs
 settings.ini
+*.ods
+*.xls*
+*.json
