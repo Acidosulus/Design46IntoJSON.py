@@ -6,7 +6,7 @@ print(sys.argv[1])
 
 print('===============================================================')
 pattern_content = open(file='pattern.json', mode='r', encoding='utf-8').read()
-print(pattern_content)
+#print(pattern_content)
 print('===============================================================')
 
 workbook = load_workbook(sys.argv[1], data_only =True)
@@ -133,6 +133,6 @@ pattern_content = pattern_content.replace('{{ Раздел_IV }}','\n'.join(data
 
 open(file=sys.argv[1]+'.json', mode='a', encoding='utf-8').write(pattern_content)
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 
 
